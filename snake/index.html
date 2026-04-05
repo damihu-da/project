@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>贪吃蛇</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>贪吃<span>蛇</span></h1>
+  <p class="sub">方向键或 WASD 移动 · 空格暂停 · 撞墙或咬到自己会结束</p>
+
+  <div class="hud">
+    <div>得分 <strong id="score">0</strong></div>
+    <div>最高 <strong id="best">0</strong></div>
+  </div>
+
+  <div class="wrap">
+    <canvas id="game" width="400" height="400" aria-label="贪吃蛇游戏区域"></canvas>
+    <div class="overlay" id="overlay" role="dialog" aria-labelledby="overlay-title">
+      <h2 id="overlay-title">游戏结束</h2>
+      <p id="overlay-msg">空格或下方按钮重新开始</p>
+      <button type="button" id="btn-restart">再来一局</button>
+    </div>
+  </div>
+
+  <div class="mobile-pad" aria-hidden="true">
+    <span class="empty"></span>
+    <button type="button" id="btn-up" aria-label="上">↑</button>
+    <span class="empty"></span>
+    <button type="button" id="btn-left" aria-label="左">←</button>
+    <span class="empty"></span>
+    <button type="button" id="btn-right" aria-label="右">→</button>
+    <span class="empty"></span>
+    <button type="button" id="btn-down" aria-label="下">↓</button>
+    <span class="empty"></span>
+  </div>
+
+  <footer>纯前端 · 本地记录最高分</footer>
+
+  <script src="game.js"></script>
+</body>
+</html>
